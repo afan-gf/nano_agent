@@ -1,2 +1,2 @@
-# my_eye_agent
-my_eye_agent is an AI agent designed for people with visual impairments, with the goal of providing useful assistance in their daily lives and work.
+# Nano Voice Agent
+An intelligent voice chat agent that combines realtime speech recognition, LLM, text-to-speech, vision, and web search capabilities to create a helpful conversational AI Agent.
