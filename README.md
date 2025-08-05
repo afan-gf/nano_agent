@@ -1,115 +1,105 @@
 # Nano Voice Agent
-An intelligent voice chat agent that combines realtime speech recognition, LLM, text-to-speech, vision, and web search capabilities to create a helpful conversational AI Agent.
 
-Features
+Nano Voice Agent is an intelligent voice chat agent that enables natural conversation with AI using voice input and output. It integrates speech recognition, natural language processing, text-to-speech synthesis, and various tools to create a comprehensive voice interaction experience.
 
-- Voice Interaction: Real-time voice input and output with voice activity detection
-- Speech Recognition: Automatic speech recognition using SenseVoiceSmall model
-- Natural Language Processing: Powered by Qwen-plus large language model
-- Text-to-Speech: High-quality speech synthesis using Edge-TTS
-- Computer Vision: Image analysis capabilities with Qwen-vl-plus model
-- Web Search: Up-to-date information retrieval from Baidu and Google
-- Speaker Verification: Voiceprint-based speaker authentication
-- Conversation Memory: Context-aware conversation management with session handling
-- Content Safety: Text validation and cleaning for TTS output
+## Features
 
-Prerequisites
+- **Voice Interaction**: Full voice-based conversation with automatic speech recognition (ASR) and text-to-speech (TTS)
+- **Multi-Turn Conversation**: Multi-turn conversation with working momery
+- **Natural Language Understanding**: Powered by large language models for contextual understanding
+- **Visual Capabilities**: Integration with camera for image capture and vision-language model analysis
+- **Web Search**: Real-time information retrieval from Baidu and Google
+- **Session Management**: Intelligent session handling with timeout and context management
+- **Content Safety**: Text guardrails for content filtering and safety
+- **Speaker Verification**: Optional speaker verification for personalized experience
+- **Real-time Audio Processing**: Voice activity detection (VAD) and audio streaming
 
-- Python 3.10 or higher
-- Audio input/output devices (microphone and speakers)
-- Camera (for vision capabilities)
-- API keys for DashScope (for LLM and VLM services)
+## Architecture
 
-Installation
+The system consists of several key components:
 
-1. Clone the repository: 
-   git clone https://github.com/afan-gf/nano_voice_agent.git
-   cd nano_voice_agent
+1. **VoiceChatAgent**: Main orchestrator managing the complete voice interaction workflow
+2. **Audio Processing**: AudioRecorder and AudioPlayer for handling input/output audio
+3. **Speech Components**: ASR, VAD, TTS, and SpeakerVerification for speech processing
+4. **AI Models**: LLM (Large Language Model) and VLM (Vision-Language Model) for intelligence
+5. **Tools**: Web search engine integration for up-to-date information
+6. **Memory Management**: WorkMemory and SessionManager for context handling
+7. **Safety**: TextGuardrail for content filtering
 
-2. Install required dependencies: 
-   pip install -r requirements.txt
+## Requirements
 
-3. Set up environment variables: 
-   export DASHSCOPE_API_KEY=your_dashscope_api_key
+- Python 3.10+
+- Audio libraries: PyAudio, webrtcvad, pygame, edge-tts
+- Speech recognition: funasr, modelscope
+- Computer vision: opencv-python
+- Web libraries: requests, beautifulsoup4
+- AI libraries: openai, dashscope
+- Search tools: baidusearch, googlesearch-python
 
-Configuration
+## Installation from git repo
 
-The agent can be configured through the config dictionary in the main script. Key configuration options include:
+1. Setup conda
+```bash
+conda create --name nano_agent python=3.10
+conda activate nano_agent
+```
 
-- API Keys: DashScope API key for LLM and VLM services
-- Model Settings: Selection of models for different tasks
-- Audio Settings: Sample rates, chunk sizes, and other audio parameters
-- Voice Settings: TTS voice selection and parameters
-- Memory Settings: Conversation history management
-- Session Settings: Session timeout and end phrases
-- VAD Settings: Voice activity detection parameters
-- Camera Settings: Camera device and capture parameters
-- Guardrail Settings: Content safety and text cleaning parameters
-- Speaker Verification: Voiceprint verification parameters
+2. Clone the repository:
+```bash
+git clone https://github.com/afan-gf/nano_voice_agent.git
+cd nano_voice_agent
+```
 
-Usage
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-Run the voice chat agent: 
+4. Configure the system by creating a [config.py] file with necessary API keys and settings.
+export your API-KEY
+```bash
+export DASHSCOPE_API_KEY=your_dashscope_api_key
+```
+
+## Usage
+
+Run the voice agent:
+```bash
 python nano_agent.py
+```
 
-The agent will start listening for voice input. Speak naturally and wait for the agent to respond. The conversation will continue until you say one of the predefined end phrases like "再见" or "bye".
+The agent will start listening for voice input. Speak naturally and wait for the AI response.
 
-Capabilities
+## Configuration
 
-Voice Interaction
-- Real-time voice recording with silence detection
-- Voice activity detection to identify speech segments
-- Audio playback with interruption handling
+Key configuration parameters include:
 
-Natural Language Processing
-- Context-aware conversation with memory management
-- Session-based conversation handling with timeout
-- Support for function calling (tools)
+- API keys for LLM, VLM, and other services
+- Audio settings (sample rate, chunk size, etc.)
+- Model parameters (model names, system prompts)
+- Session management (timeout, end phrases)
+- Safety settings (language filters, character patterns)
+- Camera settings (device index, warmup parameters)
+- Search settings (timeout, result count)
 
-Tools Integration
-1. Vision Analysis: Capture images and analyze visual content
-2. Web Search: Retrieve up-to-date information from search engines
+## Tools
 
-Content Safety
-- Text validation and cleaning before TTS
+The agent supports two main tools:
+
+1. **Vision Analysis**: Capture images and analyze them with a vision-language model
+2. **Web Search**: Search the web for up-to-date information using Baidu or Google
+
+## Safety Features
+
+- Text guardrails to filter unsafe content
 - Language detection and filtering
-- Removal of unspeakable characters and special symbols
+- Special character removal
+- Emoji and symbol filtering
 
-Speaker Verification
-- Voiceprint-based authentication
-- Configurable verification threshold
-- Fallback to skip verification if not configured
+## Contributing
 
-Architecture
+Contributions are welcome! Please feel free to submit issues and pull requests.
 
-The system consists of several modular components:
-
-- Memory: Conversation history management
-- ASR: Automatic Speech Recognition using SenseVoiceSmall
-- VAD: Voice Activity Detection using WebRTC
-- SpeakerVerification: Speaker authentication
-- LLM: Large Language Model interface (Qwen-plus)
-- TTS: Text-to-Speech using Edge-TTS
-- VLM: Vision Language Model (Qwen-vl-plus)
-- SearchEngine: Web search capabilities
-- AudioPlayer: Audio playback management
-- Camera: Image capture functionality
-- SessionManager: Conversation session management
-- AudioRecorder: Audio recording with VAD
-- TextGuardrail: Content safety and text cleaning
-
-Contributing
-
-Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
-
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgments
-
-- DashScope (https://dashscope.aliyun.com/) for LLM and VLM services
-- ModelScope (https://modelscope.cn/) for various AI models
-- Edge-TTS (https://github.com/rany2/edge-tts) for text-to-speech capabilities
-- WebRTC VAD (https://github.com/wiseman/py-webrtcvad) for voice activity detection
-- FunASR (https://github.com/modelscope/FunASR) for speech recognition models
