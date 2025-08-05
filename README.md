@@ -22,14 +22,14 @@ Prerequisites
 
 Installation
 
-1. Clone the repository:
+1. Clone the repository: 
    git clone https://github.com/afan-gf/nano_voice_agent.git
    cd nano_voice_agent
 
-2. Install required dependencies:
+2. Install required dependencies: 
    pip install -r requirements.txt
 
-3. Set up environment variables:
+3. Set up environment variables: 
    export DASHSCOPE_API_KEY=your_dashscope_api_key
 
 Configuration
@@ -49,8 +49,8 @@ The agent can be configured through the config dictionary in the main script. Ke
 
 Usage
 
-Run the voice chat agent:
-python voice_chat_agent.py
+Run the voice chat agent: 
+python nano_agent.py
 
 The agent will start listening for voice input. Speak naturally and wait for the agent to respond. The conversation will continue until you say one of the predefined end phrases like "再见" or "bye".
 
