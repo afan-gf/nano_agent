@@ -1,18 +1,17 @@
-# Nano Voice Agent
+# Nano Agent
 
-Nano Voice Agent is an intelligent voice chat agent that enables natural conversation with AI using voice input and output. It integrates speech recognition, natural language processing, text-to-speech synthesis, and various tools to create a comprehensive voice interaction experience.
+Nano Agent is a voice and visual AI agent built for people with visual impairments, with the goal of providing useful assistance in their daily lives and work.
 
 ## Features
 
-- **Voice Interaction**: Full voice-based conversation with automatic speech recognition (ASR) and text-to-speech (TTS)
+- **Natural Voice Interaction**: Full voice-based conversation
 - **Multi-Turn Conversation**: Multi-turn conversation with working momery
-- **Natural Language Understanding**: Powered by large language models for contextual understanding
-- **Visual Capabilities**: Integration with camera for image capture and vision-language model analysis
-- **Web Search**: Real-time information retrieval from Baidu and Google
-- **Session Management**: Intelligent session handling with timeout and context management
-- **Content Safety**: Text guardrails for content filtering and safety
-- **Speaker Verification**: Optional speaker verification for personalized experience
-- **Real-time Audio Processing**: Voice activity detection (VAD) and audio streaming
+- **Visual Assistance Capabilities**: Integration with camera or AI glass, enble realtime vision analysis
+- **Autonomously Guides**: Autonomously guides, avoids obstacles, safe path guiding, and helps visually impaired get to their destinations.
+- **Realt-time information search**: Real-time information retrieval from search engines Baidu and Google
+- **Device Using**: built-in agent for Computer and mobile device using
+- **Safety**: Provide protection for personal safety and danger warning.
+- **Real-time**: Provide assistance in real time
 
 ## Architecture
 
